@@ -2,4 +2,4 @@
 
 Repo del corso Business Intelligence Software Developer
 
--[Questionario](https://forms.gle/GKqsRiUeCNdJ23dw9)
+- [Questionario](https://forms.gle/GKqsRiUeCNdJ23dw9)
