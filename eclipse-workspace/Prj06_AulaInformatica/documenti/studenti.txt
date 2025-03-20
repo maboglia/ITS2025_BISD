@@ -1,0 +1,29 @@
+Leonardo,Agnese,2001-10-30
+Marco,Arneodo,2005-06-11
+Youssef,Badr,2005-02-04
+Andrea,Brecko,2003-09-27
+Andrea,Cerrato,2004-07-16
+Andrea,De Giorgi,2004-09-13
+Alessio,Del Monte,2003-11-26
+Michelangelo,Delfino,2005-05-13
+Stefano,Demaria,2004-07-16
+Sara,Gelli,1997-06-02
+Andrea,Giovene,1991-02-25
+Ashna,Kaur,2001-03-21
+Andrea,Lergo,2003-01-22
+Mattia,Martinelli,1996-11-23
+Matteo,Mazzoni,2005-03-02
+Giada,Perno,2004-01-27
+noemi,renna,1997-09-22
+Alessia,Sanfilippo,2001-06-05
+valentina,slaviero,2005-03-28
+Robert,Smau,1998-07-15
+Elia,Sollazzo,1997-12-29
+Glalganie Clevatte,Tchissambou Bayo,1993-06-06
+Romina,Trazzi,1988-07-23
+Fabio,Blanna,1977-02-08
+Walter,Cavaliere,2002-08-01
+Giorgio,Formiggini,2003-03-06
+David,Mancin,2004-11-04
+federico,molner,2004-12-06
+Samuele,Vollero,2003-08-14

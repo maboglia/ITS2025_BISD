@@ -2,6 +2,7 @@ package controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import model.Studente;
 
@@ -19,7 +20,28 @@ public class Aula {
 		this.presenti = new ArrayList<Studente>();
 	}
 	
-	
+	public void faiAppello() {
+		Scanner scanner = new Scanner(System.in);
+		for (Studente s : registro.getStudenti()) {
+			
+			System.out.println("E' presente lo studente");
+			System.out.println(s +  "?");
+			
+			String risposta = scanner.nextLine();
+			
+			if (risposta.equalsIgnoreCase("S"))
+				this.presenti.add(s);
+			else
+				this.assenti.add(s);
+			
+		}
+		
+		System.out.println("I presenti sono " + this.presenti.size());
+		System.out.println("Gli assenti sono " + this.assenti.size());
+		
+		
+		
+	}
 	
 	
 	

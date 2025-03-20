@@ -4,29 +4,21 @@ import java.time.LocalDate;
 
 public class Studente {
 
+	private static int counter = 1;
+	
 	private int id;
 	private String nome;
 	private String cognome;
 	private LocalDate dataNascita;
 	
-	public Studente(String nome, String cognome, int id) {
-		this.id = id;
+	public Studente(String nome, String cognome) {
+		this.id = counter++;
 		this.nome = nome;
 		this.cognome = cognome;	
 	}
 	
-	
-	public Studente(int id, String nome, String cognome) {
-		this.id = id;
-		this.nome = nome;
-		this.cognome = cognome;	
-	}
-	
-	public Studente(int id, String nome, String cognome, LocalDate dataNascita) {
-		super();
-		this.id = id;
-		this.nome = nome;
-		this.cognome = cognome;
+	public Studente(String nome, String cognome, LocalDate dataNascita) {
+		this(nome, cognome);
 		this.dataNascita = dataNascita;
 	}
 
