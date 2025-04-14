@@ -2,6 +2,7 @@ package demo;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Deque;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -40,9 +41,19 @@ public class SaloneVeicoliDemo {
 		stanza3.add(auto3);
 		stanza3.add(auto2);
 		
-		stampaStanza("Stanza1", stanza1);
-		stampaStanza("Stanza2", stanza2);
-		stampaStanza("Stanza3", stanza3);
+		Collection<Veicolo> garage = new ArrayList<>();
+		garage.addAll(stanza1);
+		garage.addAll(stanza2);
+		garage.addAll(stanza3);
+		
+		Collections.sort( (List<Veicolo>) garage);
+		
+//		stampaStanza("Stanza1", stanza1);
+//		stampaStanza("Stanza2", stanza2);
+//		stampaStanza("Stanza3", stanza3);
+		
+		stampaStanza("Intero garage", garage);
+		
 //		
 //		System.out.println("La stanza 1 contiene " + stanza1.size() + " veicoli");
 //		System.out.println("La stanza 2 contiene " + stanza2.size() + " veicoli");
@@ -53,10 +64,13 @@ public class SaloneVeicoliDemo {
 	}
 
 	private static void stampaStanza(String nomeStanza, Collection<Veicolo> stanza) {
-		System.out.printf("La %s contiene " + stanza.size() + " veicoli %n", nomeStanza);
-		
+		System.out.printf("La %s contiene " + stanza.size() + " veicoli", nomeStanza);
+		System.out.println();
 		for (Veicolo veicolo : stanza) {
-			System.out.println(veicolo);
+			if (veicolo instanceof Elettrica)
+				System.out.println("* " + veicolo);
+			else 
+				System.out.println(veicolo);
 		}
 		
 	}

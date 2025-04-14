@@ -5,6 +5,7 @@ public class Automobile extends Veicolo {
 	int cilindrata;
 	int posti;
 	String modello;
+	Alimentazione alimentazione;
 	
 	//public Automobile() {}
 	
@@ -39,9 +40,20 @@ public class Automobile extends Veicolo {
 
 	@Override
 	public String toString() {
-		String libretto = super.toString();
-		libretto += "Automobile [cilindrata=" + cilindrata + ", posti=" + posti + ", modello=" + modello + "]";
-		return libretto;
+		StringBuilder libretto = new StringBuilder();
+		
+		//libretto.append("Automobile [cilindrata=" + cilindrata + ", posti=" + posti + ", modello=" + modello + "]");
+		libretto.append("\n*******************************************************\n");
+		libretto.append("Tipo di mezzo: " + nome);
+		libretto.append("\nmarca: " + marca);
+		libretto.append("\nprezzo: " + getPrezzo());
+		libretto.append("\ncilindrata: " + cilindrata);
+		libretto.append("\nposti: " + posti);
+		libretto.append("\nmodello: " + modello);
+		libretto.append("\nalimentazione: " + alimentazione);
+		libretto.append("\n*******************************************************\n");		
+		
+		return libretto.toString();
 	}
 
 	
