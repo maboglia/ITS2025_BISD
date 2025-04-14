@@ -1,7 +1,12 @@
 package presentation;
 
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.List;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import model.Libro;
 import service.Ripiano;
@@ -33,9 +38,18 @@ public class BibliotecaController {
 			primo.addLibro(l);
 		}
 		
+		JSONArray array = new JSONArray();
+		
 		for (Libro l : primo.getLibri()) {
-			System.out.println(l.getTitolo() + ": " + l.getPrezzo());
+			JSONObject obj = new JSONObject(l);
+			array.put(obj);
+			//System.out.println(l.getTitolo() + ": " + l.getPrezzo());
 		}
+		File f = new File("C:\\Users\\m.bogliaccino\\Desktop\\libri.json");
+		PrintWriter output = new PrintWriter(f);
+		output.println(array.toString());
+		output.close();
+		System.out.println("File creato con successo");
 		
 	}
 
