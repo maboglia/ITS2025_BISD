@@ -7,6 +7,11 @@ public class Pokemon {
 	private String tipo1;
 	private String tipo2;
 	
+	
+	public String getPhoto() {
+		return "https://img.pokemondb.net/sprites/home/normal/2x/"+ this.nome.toLowerCase() +".jpg";
+	}
+	
 	public int getId() {
 		return id;
 	}
