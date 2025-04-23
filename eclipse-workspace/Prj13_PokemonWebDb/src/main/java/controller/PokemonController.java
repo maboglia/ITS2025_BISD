@@ -30,6 +30,12 @@ public class PokemonController extends HttpServlet{
 		
 		
 	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		resp.setStatus(205);
+		resp.getWriter().print("ciao");
+	}
 	
 	
 	
