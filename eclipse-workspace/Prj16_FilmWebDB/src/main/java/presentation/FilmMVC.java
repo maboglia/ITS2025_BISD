@@ -10,6 +10,9 @@ import services.FilmServiceImpl;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
+
+import entities.Film;
 
 /**
  * Servlet implementation class FilmMVC
@@ -22,10 +25,9 @@ public class FilmMVC extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		PrintWriter output = response.getWriter();
-		
-		output.print("funziona!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-		
+		List<Film> lista = service.getFilms();
+		request.setAttribute("elenco", lista);
+		request.getRequestDispatcher("film.jsp").forward(request, response);
 		
 		
 	}
