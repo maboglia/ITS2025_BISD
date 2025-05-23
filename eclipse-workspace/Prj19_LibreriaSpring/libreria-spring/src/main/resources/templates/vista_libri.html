@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container">
+
+        <h1 th:text="${titolo}">Libri</h1>
+
+         <ul>
+            <li th:each="genere : ${generi}" th:text="${genere}">pippo</li>
+         </ul>
+
+         <ul>
+            <li th:each="libro : ${libri}" th:text="${libro.titolo}"></li>
+         </ul>
+
+
+    </div>
+
+</body>
+</html>
