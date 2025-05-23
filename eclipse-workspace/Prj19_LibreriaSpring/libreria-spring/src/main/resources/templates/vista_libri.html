@@ -4,20 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+>
 </head>
 <body>
     
     <div class="container">
-
+<div th:insert="~{index :: menu}"></div>
         <h1 th:text="${titolo}">Libri</h1>
 
-         <ul>
-            <li th:each="genere : ${generi}" th:text="${genere}">pippo</li>
-         </ul>
+        <form action="libri" method="post">
+            <div>
+                <label for="titolo">Titolo</label>
+                <input type="text" name="titolo" id="titolo">
+            </div>
+            <div>
+                <label for="pagine">pagine</label>
+                <input type="text" name="pagine" id="pagine">
+            </div>                
+            <div>
+                <label for="prezzo">prezzo</label>
+                <input type="text" name="prezzo" id="prezzo">
+            </div>
+            <button>Add libro</button>                
+        </form>
 
-         <ul>
-            <li th:each="libro : ${libri}" th:text="${libro.titolo}"></li>
-         </ul>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Titolo</th>
+                    <th>Prezzo</th>
+                    <th>Pagine</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr th:each="libro : ${libri}" th:object="${libro}">
+                    <td th:text="*{titolo}"></td>
+                    <td th:text="*{prezzo}"></td>
+                    <td th:text="*{pagine}"></td>
+                </tr>
+            </tbody>
+
+        </table>
+
 
 
     </div>

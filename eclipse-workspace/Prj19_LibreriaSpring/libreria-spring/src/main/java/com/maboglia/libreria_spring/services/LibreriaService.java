@@ -24,5 +24,11 @@ public class LibreriaService {
         return dao.findAll();
     }
 
+    public void addLibro(Libro l) {
+      
+        dao.save(l);
+
+    }
+
 
 }
