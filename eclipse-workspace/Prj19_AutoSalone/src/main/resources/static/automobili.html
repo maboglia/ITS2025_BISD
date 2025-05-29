@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+>
+</head>
+<body>
+    
+    <div class="container">
+
+        <h1>Automobili</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Marca</th>
+                    <th>Modello</th>
+                    <th>Cilindrata</th>
+                    <th>Prezzo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+
+        </table>
+
+
+    </div>
+<script>
+
+    const URL = 'api/automobili'
+
+    fetch(URL)
+        .then(response => response.json())
+        .then(automobili => {
+
+            for (const auto of automobili) {
+                const TR = document.createElement('tr')
+                const TD1 = document.createElement('td')
+                const TD2 = document.createElement('td')
+                const TD3 = document.createElement('td')
+                const TD4 = document.createElement('td')
+                TD1.textContent = auto.marca
+                TD2.textContent = auto.modello
+                TD3.textContent = auto.cilindrata
+                TD4.textContent = auto.prezzo
+                TR.append(TD1,TD2,TD3,TD4)
+                document.querySelector('table>tbody').append(TR)
+
+            }
+
+        })
+
+</script>
+</body>
+</html>
