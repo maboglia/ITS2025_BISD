@@ -49,4 +49,24 @@ public class AutosaloneServiceImpl implements AutosaloneService {
 		return repoMoto.findByMarca(marca);
 	}
 
+	@Override
+	public Automobile updateAutomobile(Automobile a) {
+		return repoAuto.save(a);
+	}
+
+	@Override
+	public void deleteAutomobile(int id) {
+		repoAuto.deleteById(id);
+	}
+
+	@Override
+	public Moto updateMoto(Moto m) {
+		return repoMoto.save(m);
+	}
+
+	@Override
+	public void deleteMoto(int id) {
+		repoMoto.deleteById(id);
+	}
+
 }
