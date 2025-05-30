@@ -62,33 +62,15 @@ public class AutosaloneMVC {
 	@PostMapping("add/moto")
 	public String addMoto(Moto m){
 		service.addMoto(m);
-		return "redirect:moto/add";
+		return "redirect:/moto";
 	}
 
 
 	
 	@PostMapping("add")
 	public String addVeicolo(@RequestParam("tipo") String tipo, Automobile a){
-
-
 		service.addAuto(a);
-		System.out.println(tipo);
-		/*
-		if (tipo.equals("auto")){
-			//Automobile a = (Automobile) v;
-			System.out.println("----------------------------------------------------------------");
-			System.out.println(v);
-			System.out.println("---------------------------------------------------------------");
-			service.addAuto((Automobile) v);
-		} 
-		else if (tipo.equals("moto")){ 
-			service.addMoto((Moto) v);
-		} 
-		else {
-			System.out.println("Non sono riuscito ad aggiungere il veicolo " + v);
-		}
-		*/
-		return "redirect:auto/add";
+		return "redirect:/auto";
 	}
 
 	
