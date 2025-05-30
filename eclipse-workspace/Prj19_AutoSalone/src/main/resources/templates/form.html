@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+  >
+</head>
+<body>
+    
+    <div class="container">
+
+        <h1 th:text="${titolo}"></h1>
+
+        <div>
+
+            <div th:if="${tipo == 'auto'}" >
+                <form action="/add" method="post">
+            </div>
+            <div th:if="${tipo == 'moto'}" >
+                <form action="/add/moto" method="post">
+            </div>
+            
+
+                <input type="hidden" name="tipo" th:value="${tipo}">
+
+                <div>
+                    <label for="marca">marca</label>
+                    <input type="text" name="marca" id="marca">
+                </div>
+
+                <div>
+                    <label for="modello">modello</label>
+                    <input type="text" name="modello" id="modello">
+                </div>
+
+                <div>
+                    <label for="cilindrata">cilindrata</label>
+                    <input type="text" name="cilindrata" id="cilindrata">
+                </div>
+
+                <div>
+                    <label for="prezzo">prezzo</label>
+                    <input type="text" name="prezzo" id="prezzo">
+                </div>
+
+                <div>
+                    <label for="posti">posti</label>
+                    <input type="text" name="posti" id="posti">
+                </div>
+
+                <button th:text="${btnadd}">Add</button>
+
+
+            </form>
+        </div>
+
+
+    </div>
+
+</body>
+</html>

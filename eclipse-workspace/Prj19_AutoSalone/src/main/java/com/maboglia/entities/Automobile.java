@@ -10,16 +10,16 @@ import lombok.Data;
 @Entity
 @Table(name = "automobili")
 @Data
-public class Automobile {
+public class Automobile extends Veicolo{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private String marca;
-	private String modello;
-	private int posti;
-	private int cilindrata;
-	private double prezzo;
+	protected String marca;
+	protected String modello;
+	protected int posti;
+	protected int cilindrata;
+	protected double prezzo;
 	public int getId() {
 		return id;
 	}

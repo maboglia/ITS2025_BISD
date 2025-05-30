@@ -6,17 +6,17 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Moto {
+public class Moto extends Veicolo {
 
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-    private String marca;
-	private String modello;
-	private int cilindrata;
-	private double prezzo;
-    
+    protected String marca;
+	protected String modello;
+	protected int cilindrata;
+	protected double prezzo;
+
     public int getId() {
         return id;
     }
