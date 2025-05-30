@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Prj19AutoSaloneApplication<com.maboglia-autosalone>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.maboglia.Prj19AutoSaloneApplication",
+            "projectName": "com.maboglia-autosalone",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

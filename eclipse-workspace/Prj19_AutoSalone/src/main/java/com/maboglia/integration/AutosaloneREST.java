@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.maboglia.entities.Automobile;
+import com.maboglia.entities.Moto;
 import com.maboglia.services.AutosaloneService;
 
 @RestController
@@ -29,6 +30,28 @@ public class AutosaloneREST {
 		return service.addAuto(a);
 	}
 	
+	
+	@GetMapping("moto")
+	public List<Moto> getMoto(){
+		return service.getMoto();
+	}
+
+
+	@PostMapping("moto")
+	public Moto addMoto(@RequestBody Moto m) {
+		return service.addMoto(m);
+	}
+	
+
+	@PostMapping("tantemoto")
+	public List<Moto> addTanteMoto(@RequestBody List<Moto> lista) {
+
+		for (Moto moto : lista) {
+			service.addMoto(moto);
+		}
+
+		return service.getMoto();
+	}
 	
 	
 }
