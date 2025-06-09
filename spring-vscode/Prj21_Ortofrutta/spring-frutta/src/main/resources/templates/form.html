@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" >
+</head>
+<body>
+    
+<div class="container">
+    <h1 th:text="${titolo}">Mercato ortofrutta</h1>
+   
+    <form action="/add" method="post">
+
+        <div>
+            <label for="nome">nome</label>
+            <input type="text" name="nome" id="nome">
+        </div>
+
+        <div>
+            <label for="categoria">categoria</label>
+            <select name="categoria" id="categoria">
+
+                <option value="">Scegli categoria</option>
+                <option th:each="cat : ${categorie}" th:value="${cat}" th:text="${cat}" ></option>
+
+            </select>
+            
+        </div>
+
+        <div>
+            <label for="origine">origine</label>
+            <input type="text" name="origine" id="origine">
+        </div>
+
+        <div>
+            <label for="prezzoKg">prezzo al Kg</label>
+            <input type="text" name="prezzoKg" id="prezzoKg">
+        </div>
+
+        <div>
+            <label for="disponibilita">disponibilità</label>
+            <select name="disponibilita" id="disponibilita">
+                <option value="">Scegli disponibilità</option>
+                
+            </select>
+            
+        </div>
+
+        <button>Add prodotto</button>
+
+
+    </form>
+
+
+
+</div>
+<script>
+    const URL = '/api/disponibilita'
+    fetch(URL)
+        .then(res => res.json())
+        .then(lista => {
+            for (const dispo of lista) {
+                const OPTION = document.createElement('option')
+                OPTION.value = dispo
+                OPTION.textContent = dispo
+                document.getElementById('disponibilita').append(OPTION)
+            }
+        })
+
+</script>
+</body>
+</html>

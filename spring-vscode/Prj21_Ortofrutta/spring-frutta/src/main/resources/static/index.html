@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" >
+</head>
+<body>
+    
+<div class="container">
+    <h1>Mercato ortofrutta</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Categoria</th>
+                <th>Origine</th>
+                <th>Prezzo</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</div>
+
+<script>
+    const URL = '/api/frutta';
+
+    fetch(URL)
+        .then(response => response.json())
+        .then(prodotti => {
+            for (const p of prodotti) {
+                
+                const TR = document.createElement('tr')
+                const TD1 = document.createElement('td')
+                const TD2 = document.createElement('td')
+                const TD3 = document.createElement('td')
+                const TD4 = document.createElement('td')
+
+                TD1.textContent = p.nome
+                TD2.textContent = p.categoria
+                TD3.textContent = p.origine
+                TD4.textContent = p.prezzo
+
+                TR.append(TD1,TD2,TD3,TD4)
+                document.querySelector("table>tbody").append(TR)
+
+            }
+        })
+
+
+
+</script>
+
+</body>
+</html>
