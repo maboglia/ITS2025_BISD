@@ -9,6 +9,16 @@
             "projectName": "com.maboglia-autosalone",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-SpringFruttaApplication<spring-frutta>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.maboglia.spring_frutta.SpringFruttaApplication",
+            "projectName": "spring-frutta",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
