@@ -62,6 +62,7 @@ public class AutosaloneMVC {
 	@PostMapping("add/moto")
 	public String addMoto(Moto m){
 		service.addMoto(m);
+		System.out.println(m);
 		return "redirect:/moto";
 	}
 

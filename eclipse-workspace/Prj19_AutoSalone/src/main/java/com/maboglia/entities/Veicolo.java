@@ -1,5 +1,8 @@
 package com.maboglia.entities;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Veicolo {
 
     protected String marca;
